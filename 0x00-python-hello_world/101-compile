@@ -1,18 +1,8 @@
-#!/usr/bin/env python3
-import os
-import py_compile
+#!/bin/bash
 
-# Get the Python file name from the envit variable
-py_filename = os.getenv('PYFILE')
+pyfile=$PYFILE
+outputfile="${pyfile}c"
 
-# Check if the environment variable is set
-if py_filename:
-    # Add the '.pyc' extension to the output file name
-    pyc_filename = py_filename + 'c'
+echo "Compiling ${pyfile} ..."
 
-    # Compile the Python file
-    py_compile.compile(py_filename, cfile=pyc_filename, doraise=True)
-
-    print(f"Compiling {py_filename} ...")
-else:
-    print("Environment variable PYFILE is not set.")
+python3 -m py_compile "$pyfile"
