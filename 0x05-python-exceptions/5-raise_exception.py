@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
 def raise_exception():
-    raise TypeError
+    try:
+        1 + 'eight'  # Attempting an operation that raises a TypeError
+    except TypeError:
+        raise
 
