@@ -1,13 +1,16 @@
 #!/usr/bin/python3
+"""
+This module defines a Rectangle class with an __init__ method
+"""
 
 
 class Rectangle:
     """
-    Empty class Rectangle that defines a rectangle
+    Rectangle class
     """
 
     def __init__(self):
         """
-        Initializes a new instance of the Rectangle class.
+        Initializes a Rectangle object
         """
         pass
