@@ -5,4 +5,9 @@ class Rectangle:
     """
     Empty class Rectangle that defines a rectangle
     """
-    pass
+
+    def __init__(self):
+        """
+        Initializes a new instance of the Rectangle class.
+        """
+        pass
