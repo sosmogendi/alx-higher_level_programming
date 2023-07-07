@@ -1,34 +1,22 @@
 #!/usr/bin/python3
-
 """
-This is the test file for the add_integer function.
+This module contains the doctest for the add_integer function.
+
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
+98
+>>> add_integer(2)
+100
+>>> add_integer(100.3, -2)
+98
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or b must be an integer
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or b must be an integer
 """
 
-from io import StringIO
-import sys
-
-add_integer = __import__('0-add_integer').add_integer
-
-# Test case 1: Addition of two positive integers
-assert add_integer(1, 2) == 3
-
-# Test case 2: Addition of positive and negative integers
-assert add_integer(100, -2) == 98
-
-# Test case 3: Addition of single integer (with default value for b)
-assert add_integer(2) == 100
-
-# Test case 4: Addition of float and negative integer
-assert add_integer(100.3, -2) == 98
-
-# Test case 5: Addition with non-integer input
-try:
-    add_integer(4, "School")
-except Exception as e:
-    assert str(e) == "a must be an integer or float"
-
-# Test case 6: Addition with None value
-try:
-    add_integer(None)
-except Exception as e:
-    assert str(e) == "a must be an integer or float"
