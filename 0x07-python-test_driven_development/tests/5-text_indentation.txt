@@ -1,0 +1,40 @@
+"""
+5-text_indentation module tests
+
+This file contains tests for the text_indentation function.
+"""
+
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+Plus semper voluptatis?")
+# Expected output:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Quonam modo?
+
+Utrum igitur tibi litteram videor an totas paginas commovere?
+
+Non autem hoc:
+
+igitur ne illud quidem.
+
+Fortasse id optimum, sed ubi illud:
+
+Plus semper voluptatis?
+
+>>> text_indentation("Hello. World! How are you?")
+# Expected output:
+Hello.
+
+World! How are you?
+
+>>> text_indentation("This is a test:")
+# Expected output:
+This is a test:
+
+
+>>> text_indentation("NoNewLinesHere")
+# Expected output:
+NoNewLinesHere
+
