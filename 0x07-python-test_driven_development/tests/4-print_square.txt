@@ -1,0 +1,36 @@
+"""
+4-print_square module tests
+
+This file contains tests for the print_square function.
+"""
+
+>>> print_square(4)
+# Expected output:
+####
+####
+####
+####
+
+>>> print_square(10)
+# Expected output:
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+>>> print_square(0)
+# Expected output: (no output)
+
+>>> print_square(1)
+# Expected output:
+#
+
+>>> print_square(-1)
+# Expected output: ValueError: size must be >= 0
+

@@ -1,0 +1,18 @@
+"""
+3-say_my_name module tests
+
+This file contains tests for the say_my_name function.
+"""
+
+>>> say_my_name("John", "Smith")
+# Expected output: My name is John Smith$
+
+>>> say_my_name("Walter", "White")
+# Expected output: My name is Walter White$
+
+>>> say_my_name("Bob")
+# Expected output: My name is Bob$
+
+>>> say_my_name(12, "White")
+# Expected output: TypeError: first_name must be a string or last_name must be a string$
+
