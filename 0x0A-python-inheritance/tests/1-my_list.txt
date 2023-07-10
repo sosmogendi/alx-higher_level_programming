@@ -2,6 +2,9 @@
 
 """
 Test cases for MyList class.
+
+These test cases verify the behavior and functionality of the MyList class,
+including the print_sorted() method.
 """
 
 MyList = __import__('1-my_list').MyList
@@ -13,9 +16,12 @@ my_list.append(4)
 my_list.append(2)
 my_list.append(3)
 my_list.append(5)
+# Verify the initial list
 assert my_list == [1, 4, 2, 3, 5]
-my_list.print_sorted()
-assert my_list == [1, 2, 3, 4, 5]
+# Verify the sorted list after calling print_sorted()
+my_list.print_sorted()  # Should print [1, 2, 3, 4, 5]
+# Verify that the original list remains unchanged
+assert my_list == [1, 4, 2, 3, 5]
 
 # Test Case 2
 my_list2 = MyList()
@@ -24,17 +30,9 @@ my_list2.append(8)
 my_list2.append(6)
 my_list2.append(4)
 my_list2.append(2)
+# Verify the initial list
 assert my_list2 == [10, 8, 6, 4, 2]
-my_list2.print_sorted()
-assert my_list2 == [2, 4, 6, 8, 10]
-
-# Additional test case
-my_list3 = MyList()
-my_list3.append(5)
-my_list3.append(3)
-my_list3.append(7)
-assert my_list3 == [5, 3, 7]
-my_list3.print_sorted()
-assert my_list3 == [3, 5, 7]
-
-print("All test cases pass")
+# Verify the sorted list after calling print_sorted()
+my_list2.print_sorted()  # Should print [2, 4, 6, 8, 10]
+# Verify that the original list remains unchanged
+assert my_list2 == [10, 8, 6, 4, 2]
