@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+This module defines the MyList class, which is a custom list class
+that inherits from the built-in list class.
+"""
+
 class MyList(list):
     """
     A custom list class that inherits from the built-in list class.
@@ -10,11 +15,11 @@ class MyList(list):
 
     def print_sorted(self):
         """
-        Print the list in sorted order (ascending).
+        Prints the list in sorted order (ascending sort).
 
         Args:
             None
-
+        
         Returns:
             None
         """
