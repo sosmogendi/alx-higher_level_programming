@@ -1,0 +1,38 @@
+Test case for area() method:
+bg = BaseGeometry()
+try:
+    bg.area()
+except Exception as e:
+    assert str(e) == "area() is not implemented", f"Unexpected error message: {str(e)}"
+else:
+    raise AssertionError("Expected Exception area() is not implemented was not raised")
+
+Test case for integer_validator() method:
+bg = BaseGeometry()
+bg.integer_validator("my_int", 12)
+bg.integer_validator("width", 89)
+
+Test case for integer_validator() method - TypeError:
+bg = BaseGeometry()
+try:
+    bg.integer_validator("name", "John")
+except TypeError as e:
+    assert str(e) == "name must be an integer", f"Unexpected error message: {str(e)}"
+else:
+    raise AssertionError("Expected TypeError was not raised")
+
+Test case for integer_validator() method - ValueError:
+bg = BaseGeometry()
+try:
+    bg.integer_validator("age", 0)
+except ValueError as e:
+    assert str(e) == "age must be greater than 0", f"Unexpected error message: {str(e)}"
+else:
+    raise AssertionError("Expected ValueError was not raised")
+
+try:
+    bg.integer_validator("distance", -4)
+except ValueError as e:
+    assert str(e) == "distance must be greater than 0", f"Unexpected error message: {str(e)}"
+else:
+    raise AssertionError("Expected ValueError was not raised")
