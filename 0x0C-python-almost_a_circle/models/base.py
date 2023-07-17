@@ -2,6 +2,7 @@
 """ Base Module """
 import json
 
+
 class Base:
     """ Base class """
 
@@ -43,8 +44,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Returns an instance with all attributes already set """
-        dummy_instance = cls(1, 1)  # Create a dummy instance with minimum required attributes
-        dummy_instance.update(**dictionary)  # Use update method to apply real values from dictionary
+        dummy_instance = cls(1, 1)
+        dummy_instance.update(**dictionary)
         return dummy_instance
 
     @classmethod

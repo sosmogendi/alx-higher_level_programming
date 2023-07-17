@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """ Rectangle Module """
+
 from models.base import Base
 
+
 class Rectangle(Base):
+
     """ Rectangle class inherits from Base """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -80,7 +83,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Return a string representation of the Rectangle """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y}\
+    - {self.width}/{self.height}"
 
     def display(self):
         """ Display the Rectangle using '#' character """

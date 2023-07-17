@@ -3,6 +3,7 @@
 import unittest
 from models.square import Square
 
+
 class TestSquare(unittest.TestCase):
     def test_area(self):
         # Test cases for the area method
@@ -32,6 +33,7 @@ class TestSquare(unittest.TestCase):
         s2.update(size=4, y=2)
         self.assertEqual(s2.size, 4)
         self.assertEqual(s2.y, 2)
+
 
 if __name__ == "__main__":
     unittest.main()

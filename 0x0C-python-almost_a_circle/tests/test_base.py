@@ -3,11 +3,13 @@
 import unittest
 from models.base import Base
 
+
 class TestBase(unittest.TestCase):
     def test_to_json_string(self):
         # Test cases for the to_json_string method
         list_dicts = [{'id': 1, 'x': 2, 'y': 3}, {'id': 2, 'x': 4, 'y': 5}]
-        expected_json = '[{"id": 1, "x": 2, "y": 3}, {"id": 2, "x": 4, "y": 5}]'
+        expected_json =
+        '[{"id": 1, "x": 2, "y": 3}, {"id": 2, "x": 4, "y": 5}]'
         self.assertEqual(Base.to_json_string(list_dicts), expected_json)
 
         empty_list = []
@@ -34,6 +36,7 @@ class TestBase(unittest.TestCase):
         instance2 = Base.create(**dict2)
         self.assertEqual(instance2.id, 2)
         self.assertEqual(instance2.size, 7)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -3,6 +3,7 @@
 import unittest
 from models.rectangle import Rectangle
 
+
 class TestRectangle(unittest.TestCase):
     def test_area(self):
         # Test cases for the area method
@@ -21,6 +22,7 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(2, 7, 3, 4, 10)
         expected_dict = {'id': 10, 'width': 2, 'height': 7, 'x': 3, 'y': 4}
         self.assertEqual(r2.to_dictionary(), expected_dict)
+
 
 if __name__ == "__main__":
     unittest.main()

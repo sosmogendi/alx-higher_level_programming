@@ -2,6 +2,7 @@
 """ Square Module """
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """ Square class inherits from Rectangle """
 
@@ -22,7 +23,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """ String representation of the Square """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return ("[Square] ({}) {}/{} - {}"
+                .format(self.id, self.x, self.y, self.width))
 
     def update(self, *args, **kwargs):
         """ Update the attributes of the Square """
