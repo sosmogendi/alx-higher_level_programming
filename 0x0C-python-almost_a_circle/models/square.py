@@ -9,11 +9,20 @@ class Square(Rectangle):
         """ Constructor method """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """ Getter method for size """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """ Setter method for size """
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """ String representation of the Square """
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
-
-    # Inherit all the width, height, x, y validation and behavior from Rectangle
 
     def update(self, *args, **kwargs):
         """ Update the attributes of the Square """
