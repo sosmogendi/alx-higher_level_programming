@@ -1,5 +1,2 @@
--- Create the table if it doesn't exist
-CREATE TABLE IF NOT EXISTS hbtn_0c_0.first_table (
-    id INT,
-    name VARCHAR(256)
-);
+-- Create the table with values id and name if it doesn't exist
+CREATE TABLE IF NOT EXISTS first_table (id INT, name VARCHAR(256));
