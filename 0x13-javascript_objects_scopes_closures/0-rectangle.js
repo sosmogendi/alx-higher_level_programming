@@ -1,7 +1,7 @@
+#!/usr/bin/node
+
 class Rectangle {
-	constructor() {
-		/* The class is currently empty, with no properties or methods. */
-	}
+  constructor() {}
 }
 
 module.exports = Rectangle;
