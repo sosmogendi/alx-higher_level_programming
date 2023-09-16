@@ -9,7 +9,7 @@ if __name__ == "__main__":
             passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = db.cursor()
     match = sys.argv[4]
-    cur.execute("SELECT * FROM states WHERE name LIKE %s", (match, ))
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY %s", (match, ))
     results = cur.fetchall()
     for row in results:
         print(row)
