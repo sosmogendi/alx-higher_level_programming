@@ -1,8 +1,3 @@
 #!/bin/bash
-# sends a GET request to the URL
-# Check if a URL argument is provided
-target_url="$1"
-
-if [ $(curl -L -s -X HEAD -w "%{http_code}" "$target_url") == '200' ]; then
-    curl -Ls "$target_url"
-fi
+# Bash script that displays the body of the response
+if [ $(curl -L -s -X HEAD -w "%{http_code}" "$1") == '200' ]; then curl -Ls "$1"; fi
