@@ -7,15 +7,8 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-# Send a GET request to the provided URL and save the response to a temporary file
-response_file=$(mktemp)
-curl -s "$1" > "$response_file"
-
-# Get the size of the response body in bytes
-body_size=$(wc -c < "$response_file")
+# Send a GET request to the provided URL, discard the headers, and count the bytes of the response body
+body_size=$(curl -s "$1" | wc -c)
 
 # Display the body size
 echo "$body_size"
-
-# Clean up the temporary file
-rm -f "$response_file"
