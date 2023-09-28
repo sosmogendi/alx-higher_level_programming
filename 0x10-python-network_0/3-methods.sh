@@ -11,4 +11,4 @@ fi
 url="$1"
 
 # Use curl to send an HTTP OPTIONS request to the URL and display the allowed methods
-curl -sI "$url" | grep "Allow" | cut -d ' ' -f 2-
+curl -sI -X OPTIONS "$url" | grep "Allow" | cut -d ' ' -f 2-
