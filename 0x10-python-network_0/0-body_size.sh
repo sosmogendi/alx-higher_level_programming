@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script takes a URL as an argument, sends a request using curl, and displays the body size in bytes.
+# This script takes a URL as an argument, sends a request using curl, and displays the size of the response body in bytes.
 
 # Check if the URL argument is provided
 if [ -z "$1" ]; then
@@ -7,17 +7,15 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-# Send a GET request to the provided URL and capture the response
-response=$(curl -sI "$1")
+# Send a GET request to the provided URL and save the response to a temporary file
+response_file=$(mktemp)
+curl -s "$1" > "$response_file"
 
-# Extract the Content-Length header value (body size) from the response headers
-body_size=$(echo "$response" | grep -i "Content-Length" | awk '{print $2}')
-
-# Check if Content-Length header was found
-if [ -z "$body_size" ]; then
-    echo "Unable to determine body size for this URL."
-    exit 1
-fi
+# Get the size of the response body in bytes
+body_size=$(wc -c < "$response_file")
 
 # Display the body size
 echo "$body_size"
+
+# Clean up the temporary file
+rm -f "$response_file"
