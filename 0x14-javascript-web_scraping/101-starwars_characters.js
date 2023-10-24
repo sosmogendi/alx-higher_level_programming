@@ -18,18 +18,19 @@ request(apiUrl, (error, response, body) => {
     const movieData = JSON.parse(body);
     const characters = movieData.characters;
 
-    function getCharacterName(url) {
-      request(url, (error, response, body) => {
-        if (!error && response.statusCode === 200) {
-          const characterData = JSON.parse(body);
-          console.log(characterData.name);
-        }
-      });
+    function getCharacterName(index) {
+      if (index < characters.length) {
+        request(characters[index], (charError, charResponse, charBody) => {
+          if (!charError && charResponse.statusCode === 200) {
+            const characterData = JSON.parse(charBody);
+            console.log(characterData.name);
+            getCharacterName(index + 1);
+          }
+        });
+      }
     }
 
-    characters.forEach((characterUrl) => {
-      getCharacterName(characterUrl);
-    });
+    getCharacterName(0); // Start with the first character
   } else {
     console.error(`Status code: ${response.statusCode}`);
   }
