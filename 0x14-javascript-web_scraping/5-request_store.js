@@ -7,22 +7,14 @@ const url = process.argv[2];
 const filePath = process.argv[3];
 
 if (!url || !filePath) {
-  console.error('Usage: node 5-request_store.js <URL> <file_path>');
+  console.error('Usage: node 5-request_store.js <URL> <FilePath>');
   process.exit(1);
 }
 
 request(url, (error, response, body) => {
-  if (error) {
-    console.error(error);
-  } else if (response.statusCode === 200) {
-    fs.writeFile(filePath, body, 'utf-8', (err) => {
-      if (err) {
-        console.error(err);
-      } else {
-        console.log(`Content saved to ${filePath}`);
-      }
-    });
+  if (!error && response.statusCode === 200) {
+    fs.writeFileSync(filePath, body, 'utf-8');
   } else {
-    console.error(`Status code: ${response.statusCode}`);
+    console.error(`Failed to retrieve content from ${url}`);
   }
 });
