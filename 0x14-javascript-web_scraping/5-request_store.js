@@ -19,7 +19,7 @@ request(url, (error, response, body) => {
       if (err) {
         console.error(err);
       } else {
-        console.log(`Content saved to ${filePath}`);
+        console.log(`${filePath} saved`);
       }
     });
   } else {
