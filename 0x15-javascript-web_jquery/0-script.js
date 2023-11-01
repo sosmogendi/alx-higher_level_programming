@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Select the <header> element
+  /* Select the <header> element */
   const headerElement = document.querySelector("header");
 
-  // Check if the element was found
+  /* Check if the element was found */
   if (headerElement) {
     headerElement.style.color = "#FF0000";
   }
